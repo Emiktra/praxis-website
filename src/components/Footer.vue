@@ -1,13 +1,13 @@
 <template>
   <footer class="footer">
     <div class="footer-content">
-      <p>&copy; 2025 My Praxis. All rights reserved.</p>
+      <p>{{ STRINGS.COPYRIGHT + " " + STRINGS.PRAXIS_NAME }}</p>
 
       <nav class="footer-links">
-        <router-link to="/">Home</router-link>
-        <router-link to="/about">About</router-link>
-        <router-link to="/services">Services</router-link>
-        <router-link to="/contact">Contact</router-link>
+        <router-link :to="ROUTES.HOME">{{ STRINGS.HOME }}</router-link>
+        <router-link :to="ROUTES.ABOUT">{{ STRINGS.ABOUT }}</router-link>
+        <router-link :to="ROUTES.SERVICES">{{ STRINGS.SERVICES }}</router-link>
+        <router-link :to="ROUTES.CONTACT">{{ STRINGS.CONTACT }}</router-link>
       </nav>
     </div>
   </footer>
@@ -15,17 +15,20 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import { ROUTES } from '@/constants';
+import { STRINGS } from '@/constants';
 
 @Options({})
 export default class Footer extends Vue {
-    
+    ROUTES = ROUTES;
+    STRINGS = STRINGS;
 }
 </script>
 
 <style scoped>
 .footer {
-  background: #222;
-  color: #fff;
+  background: var(--color-footer-bg);
+  color: var(--color-text-primary);
   padding: 1.5rem;
   text-align: center;
 }
@@ -43,12 +46,12 @@ export default class Footer extends Vue {
 }
 
 .footer-links a {
-  color: #bbb;
+  color: var(--color-text-default);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .footer-links a:hover {
-  color: #fff;
+  color: var(--color-text-hover);
 }
 </style>

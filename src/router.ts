@@ -7,14 +7,15 @@ import Services from './pages/Services.vue';
 import Contact from './pages/Contact.vue';
 import Appointments from './pages/Appointments.vue';
 import Impressium from './pages/Impressium.vue';
+import { ROUTES } from './constants';
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/about', component: About },
-  { path: '/services', component: Services },
-  { path: '/contact', component: Contact },
-  { path: '/appointments', component: Appointments },
-  { path: '/impressium', component: Impressium }
+  { path: ROUTES.HOME, component: Home },
+  { path: ROUTES.ABOUT, component: About },
+  { path: ROUTES.SERVICES, component: Services },
+  { path: ROUTES.CONTACT, component: Contact },
+  { path: ROUTES.APPOINTMENTS, component: Appointments },
+  { path: ROUTES.IMPRESSUM, component: Impressium }
 ];
 
 const router = createRouter({
