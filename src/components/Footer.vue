@@ -4,10 +4,12 @@
       <p>{{ STRINGS.COPYRIGHT + " " + STRINGS.PRAXIS_NAME }}</p>
 
       <nav class="footer-links">
-        <router-link :to="ROUTES.HOME">{{ STRINGS.HOME }}</router-link>
-        <router-link :to="ROUTES.ABOUT">{{ STRINGS.ABOUT }}</router-link>
-        <router-link :to="ROUTES.SERVICES">{{ STRINGS.SERVICES }}</router-link>
-        <router-link :to="ROUTES.CONTACT">{{ STRINGS.CONTACT }}</router-link>
+        <router-link v-for="route in ROUTES_ARRAY"
+          :key="route.path"
+          :to="route.path"
+        >
+          {{ route.name }}
+        </router-link>
       </nav>
     </div>
   </footer>
@@ -15,20 +17,26 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import { ROUTES } from '@/constants';
-import { STRINGS } from '@/constants';
+import { ROUTES, STRINGS } from '@/constants';
 
 @Options({})
 export default class Footer extends Vue {
-    ROUTES = ROUTES;
-    STRINGS = STRINGS;
+  ROUTES = ROUTES;
+  STRINGS = STRINGS;
+
+  ROUTES_ARRAY = [
+    { path: ROUTES.ABOUT, name: STRINGS.ABOUT },
+    { path: ROUTES.SERVICES, name: STRINGS.SERVICES },
+    { path: ROUTES.CONTACT, name: STRINGS.CONTACT },
+    { path: ROUTES.IMPRESSUM, name: STRINGS.IMPRESSUM },
+  ];
 }
 </script>
 
 <style scoped>
 .footer {
   background: var(--color-footer-bg);
-  color: var(--color-text-primary);
+  color: var(--color-text-default);
   padding: 1.5rem;
   text-align: center;
 }

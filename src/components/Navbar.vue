@@ -27,9 +27,7 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import { ROUTES } from '@/constants';
-import { ASSETS } from '@/constants';
-import { STRINGS } from '@/constants';
+import { ROUTES, STRINGS, ASSETS } from '@/constants';
 
 @Options({})
 export default class Navbar extends Vue {
@@ -74,13 +72,16 @@ export default class Navbar extends Vue {
 <style scoped>
 .navbar {
   display: flex;
+  box-sizing: border-box;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   background:var(--color-background);
   border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
 .logo_section {
@@ -164,7 +165,7 @@ export default class Navbar extends Vue {
   transform: rotate(-45deg) translateY(70%);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .hamburger {
     display: flex;
   }

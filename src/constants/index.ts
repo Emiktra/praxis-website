@@ -1,12 +1,20 @@
 import mainLogo from '@/assets/main_logo.svg';
+import heroBg from '@/assets/hero_background.jpg';
+import doctorPortrait from '@/assets/doctor_portrait.jpg';
+import teamMemberPortrait from '@/assets/team_member_portrait.jpg';
 
 export const ASSETS = {
-  MAIN_LOGO: mainLogo
+  MAIN_LOGO: mainLogo,
+  HERO_BG: heroBg,
+  DOCTOR_PORTRAIT: doctorPortrait,
+  TEAM_MEMBER_PORTRAIT: teamMemberPortrait,
 };
 
 export const STRINGS = {
   PRAXIS_NAME: 'Praxis Yasemin Akkoca',
   COPYRIGHT: '© 2025',
+  DOCTOR_NAME: 'Yasemin Akkoca',
+  DOCTOR_ID: 'yasemin_akkoca',
   HOME: 'Startseite',
   ABOUT: 'Über uns',
   SERVICES: 'Leistungen',
@@ -21,7 +29,9 @@ export const ROUTES = {
   SERVICES: '/services',
   CONTACT: '/contact',
   APPOINTMENTS: '/appointments',
-  IMPRESSUM: '/impressium'
+  IMPRESSUM: '/impressium',
+  DOCTORS: '/doctors',
+  PRIMARY_DOC: '/doctors/' + STRINGS.DOCTOR_ID,
 };
 
 export const COLORS = {
