@@ -15,12 +15,19 @@ export const STRINGS = {
   COPYRIGHT: '© 2025',
   DOCTOR_NAME: 'Yasemin Akkoca',
   DOCTOR_ID: 'yasemin_akkoca',
+  PHONE_NUM: '02191 696 64 90',
+  ADDRESS: 'Eisernsteinstraße 16, 42899 Remscheid',
+  STREET: 'Eisernsteinstraße 16',
+  CITY: '42899 Remscheid',
+  EMAIL: 'praxis.akkoca@t-online.de',
   HOME: 'Startseite',
   ABOUT: 'Über uns',
   SERVICES: 'Leistungen',
   CONTACT: 'Kontakt',
   APPOINTMENTS: 'Termine',
-  IMPRESSUM: 'Impressum'
+  IMPRESSIUM: 'Impressum',
+  PRIVACY_POLICY: 'Datenschutz',
+  OPENING_HOURS: 'Öffnungszeiten',
 };
 
 export const ROUTES = {
@@ -30,18 +37,21 @@ export const ROUTES = {
   CONTACT: '/contact',
   APPOINTMENTS: '/appointments',
   IMPRESSUM: '/impressium',
+  PRIVACY_POLICY: 'privacy_policy',
   DOCTORS: '/doctors',
   PRIMARY_DOC: '/doctors/' + STRINGS.DOCTOR_ID,
 };
 
 export const COLORS = {
-  TEXT_DEFAULT: '#222222',
+  TEXT_DEFAULT: '#222',
   TEXT_HOVER: '#ff9900',
-  PRIMARY: '#6fa8dc',
+  LINK: '#deedffff',
+  LINK_DARK: '#4b9af9ff',
   SECONDARY: '#82c0aa',
-  BACKGROUND: '#f9f9f9',
-  FOOTER_BG: '#e1e0e0ff',
-  FOOTER_TEXT: '#ffffff',
+  BACKGROUND: '#f5f5f5',
+  BACKGROUND_ALT: '#e0e0e0',
+  FOOTER_BG: '#222',
+  FOOTER_TEXT: '#fff',
   BORDER_COLOR: '#ddd',
   ASSET_BG: '#333',
 };

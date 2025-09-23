@@ -26,9 +26,8 @@ export default class Footer extends Vue {
 
   ROUTES_ARRAY = [
     { path: ROUTES.ABOUT, name: STRINGS.ABOUT },
-    { path: ROUTES.SERVICES, name: STRINGS.SERVICES },
-    { path: ROUTES.CONTACT, name: STRINGS.CONTACT },
-    { path: ROUTES.IMPRESSUM, name: STRINGS.IMPRESSUM },
+    { path: ROUTES.IMPRESSUM, name: STRINGS.IMPRESSIUM },
+    { path: ROUTES.PRIVACY_POLICY, name: STRINGS.PRIVACY_POLICY },
   ];
 }
 </script>
@@ -36,7 +35,7 @@ export default class Footer extends Vue {
 <style scoped>
 .footer {
   background: var(--color-footer-bg);
-  color: var(--color-text-default);
+  color: var(--color-text-link);
   padding: 1.5rem;
   text-align: center;
 }
@@ -47,6 +46,10 @@ export default class Footer extends Vue {
   gap: 1rem;
 }
 
+.footer-content p {
+  user-select: none;
+}
+
 .footer-links {
   display: flex;
   justify-content: center;
@@ -54,7 +57,7 @@ export default class Footer extends Vue {
 }
 
 .footer-links a {
-  color: var(--color-text-default);
+  color: var(--color-text-link);
   text-decoration: none;
   transition: color 0.2s;
 }

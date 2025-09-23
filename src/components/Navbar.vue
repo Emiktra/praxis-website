@@ -60,7 +60,7 @@ export default class Navbar extends Vue {
     { path: ROUTES.SERVICES, name: STRINGS.SERVICES },
     { path: ROUTES.CONTACT, name: STRINGS.CONTACT },
     { path: ROUTES.APPOINTMENTS, name: STRINGS.APPOINTMENTS },
-    { path: ROUTES.IMPRESSUM, name: STRINGS.IMPRESSUM },
+    { path: ROUTES.IMPRESSUM, name: STRINGS.IMPRESSIUM },
   ];
 
   goHome() {

@@ -27,9 +27,11 @@ export default class Root extends Vue {
     const root = document.documentElement; // reference to <html>
     root.style.setProperty('--color-text-default', COLORS.TEXT_DEFAULT);
     root.style.setProperty('--color-text-hover', COLORS.TEXT_HOVER);
-    root.style.setProperty('--color-text-primary', COLORS.PRIMARY);
+    root.style.setProperty('--color-text-link', COLORS.LINK);
+    root.style.setProperty('--color-text-link-dark', COLORS.LINK_DARK);
     root.style.setProperty('--color-text-secondary', COLORS.SECONDARY);
     root.style.setProperty('--color-background', COLORS.BACKGROUND);
+    root.style.setProperty('--color-background-alt', COLORS.BACKGROUND_ALT);
     root.style.setProperty('--color-footer-bg', COLORS.FOOTER_BG);
     root.style.setProperty('--color-footer-text', COLORS.FOOTER_TEXT);
     root.style.setProperty('--color-border', COLORS.BORDER_COLOR);

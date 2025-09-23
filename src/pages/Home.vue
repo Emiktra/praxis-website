@@ -38,20 +38,34 @@
     </section>
 
     <section class="opening-hours">
-      <h2>Öffnungszeiten</h2>
+      <h2>{{ STRINGS.OPENING_HOURS }}</h2>
       <ul>
         <li v-for="entry in OPENING_HOURS" :key="entry.days">
           <span class="days">{{ entry.days }}:</span>
           <span class="hours">{{ entry.hours }}</span>
         </li>
       </ul>
+      <br>
+    </section>
+
+    <section class="contact">
+      <div class="contact-container">
+        <h2>{{ STRINGS.CONTACT }}</h2>
+        <p>
+          {{ STRINGS.PRAXIS_NAME }}<br>
+          {{ STRINGS.STREET }}<br>
+          {{ STRINGS.CITY }}<br>
+          Tel. <a :href="`tel:${STRINGS.PHONE_NUM}`">{{ STRINGS.PHONE_NUM }}</a><br>
+          <a :href="`mailto:${STRINGS.EMAIL}`">{{ STRINGS.EMAIL }}</a>
+        </p>
+      </div>
     </section>
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import { ASSETS, STRINGS } from '@/constants';
+import { ASSETS, STRINGS, ROUTES } from '@/constants';
 import { TEAM } from '@/constants/team';
 
 @Options({})
@@ -59,6 +73,7 @@ export default class Home extends Vue {
   ASSETS = ASSETS;
   STRINGS = STRINGS;
   TEAM = TEAM;
+  ROUTES = ROUTES;
 
   OPENING_HOURS = [
     { days: "Montag–Donnerstag", hours: "09:00–12:00 und 14:00–16:00" },
@@ -252,5 +267,48 @@ export default class Home extends Vue {
     margin-left: 0;
     margin: 4px 0;
   }
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background: var(--color-background-alt);
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 0;
+  text-align: left;
+  width: 90%;
+  max-width: 1000px;
+  box-sizing: border-box;
+}
+
+.contact-container h2 {
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.contact-container p {
+  text-align: left;
+  line-height: 1.6;
+  padding-left: 1rem;
+}
+
+.contact-container p a {
+  text-decoration: none;
+  color: var(--color-text-link-dark);
+  transition: color 0.5s ease;
+}
+
+.contact-container p a:hover {
+  transition: color 0.2s ease;
+  color: var(--color-text-hover);
 }
 </style>
