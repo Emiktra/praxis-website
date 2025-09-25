@@ -16,9 +16,14 @@
       <div class="about-text">
         <h2>Über {{ STRINGS.DOCTOR_NAME }}</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa explicabo odit cumque 
-          consequuntur tempora ullam doloremque, atque magni necessitatibus assumenda adipisci 
-          quos maiores expedita repellendus corrupti esse fugiat nesciunt reiciendis.
+          Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae
+          pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean
+          sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas iaculis massa
+          nisl malesuada lacinia integer nunc posuere ut hendrerit semper vel class aptent taciti sociosq
+          ad litora torquent per conubia nostra inceptos himenaeos orci varius natoque penatibus et magnis
+          dis parturient montes nascetur ridiculus mus donec rhoncus eros lobortis nulla molestie mattis
+          scelerisque maximus eget fermentum odio phasellus non purus est efficitur laoreet mauris pharetra
+          vestibulum fusce dictum risus.
         </p>
       </div>
     </section>
@@ -49,15 +54,10 @@
     </section>
 
     <section class="contact">
-      <div class="contact-container">
+      <div class="contact-section">
         <h2>{{ STRINGS.CONTACT }}</h2>
-        <p>
-          {{ STRINGS.PRAXIS_NAME }}<br>
-          {{ STRINGS.STREET }}<br>
-          {{ STRINGS.CITY }}<br>
-          Tel. <a :href="`tel:${STRINGS.PHONE_NUM}`">{{ STRINGS.PHONE_NUM }}</a><br>
-          <a :href="`mailto:${STRINGS.EMAIL}`">{{ STRINGS.EMAIL }}</a>
-        </p>
+        
+        <ContactComp />
       </div>
     </section>
   </div>
@@ -67,8 +67,13 @@
 import { Options, Vue } from 'vue-class-component';
 import { ASSETS, STRINGS, ROUTES } from '@/constants';
 import { TEAM } from '@/constants/team';
+import ContactComp from '@/components/ContactComp.vue';
 
-@Options({})
+@Options({
+  components: {
+    ContactComp,
+  }
+})
 export default class Home extends Vue {
   ASSETS = ASSETS;
   STRINGS = STRINGS;
@@ -270,45 +275,24 @@ export default class Home extends Vue {
 }
 
 .contact {
+  width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0;
-  margin: 0;
-  width: 100%;
   background: var(--color-background-alt);
 }
 
-.contact-container {
+.contact-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 1rem 0;
+  align-items: left;
   text-align: left;
-  width: 90%;
   max-width: 1000px;
-  box-sizing: border-box;
+  width: 90%;
 }
 
-.contact-container h2 {
-  padding-left: 1rem;
-  margin-bottom: 1.5rem;
-  text-align: left;
-}
-
-.contact-container p {
-  text-align: left;
-  line-height: 1.6;
-  padding-left: 1rem;
-}
-
-.contact-container p a {
-  text-decoration: none;
-  color: var(--color-text-link-dark);
-  transition: color 0.5s ease;
-}
-
-.contact-container p a:hover {
-  transition: color 0.2s ease;
-  color: var(--color-text-hover);
+.contact-section h2 {
+  padding: 0 1rem;
+  margin: 0;
+  margin-top: 2rem;
 }
 </style>

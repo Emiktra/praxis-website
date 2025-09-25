@@ -14,12 +14,13 @@
 import { Options, Vue } from 'vue-class-component';
 import Navbar from './components/Navbar.vue';
 import Footer from './components/Footer.vue';
+
 import { COLORS } from '@/constants';
 
 @Options({
   components: {
     Navbar,
-    Footer
+    Footer,
   }
 })
 export default class Root extends Vue {
