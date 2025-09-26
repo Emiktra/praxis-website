@@ -12,10 +12,9 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import Navbar from './components/Navbar.vue';
-import Footer from './components/Footer.vue';
-
-import { COLORS } from '@/constants';
+import Navbar from '@/components/Navbar.vue';
+import Footer from '@/components/Footer.vue';
+import '@/constants/theme.css';
 
 @Options({
   components: {
@@ -23,22 +22,8 @@ import { COLORS } from '@/constants';
     Footer,
   }
 })
-export default class Root extends Vue {
-  mounted() {
-    const root = document.documentElement; // reference to <html>
-    root.style.setProperty('--color-text-default', COLORS.TEXT_DEFAULT);
-    root.style.setProperty('--color-text-hover', COLORS.TEXT_HOVER);
-    root.style.setProperty('--color-text-link', COLORS.LINK);
-    root.style.setProperty('--color-text-link-dark', COLORS.LINK_DARK);
-    root.style.setProperty('--color-text-secondary', COLORS.SECONDARY);
-    root.style.setProperty('--color-background', COLORS.BACKGROUND);
-    root.style.setProperty('--color-background-alt', COLORS.BACKGROUND_ALT);
-    root.style.setProperty('--color-footer-bg', COLORS.FOOTER_BG);
-    root.style.setProperty('--color-footer-text', COLORS.FOOTER_TEXT);
-    root.style.setProperty('--color-border', COLORS.BORDER_COLOR);
-    root.style.setProperty('--color-asset-bg', COLORS.ASSET_BG);
-  }
-}
+
+export default class Root extends Vue {}
 </script>
 
 
@@ -53,7 +38,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  background: var(--color-background);
+  color: var(--color-text-default);
   display: flex;
   flex-direction: column;
   min-height: 100vh;

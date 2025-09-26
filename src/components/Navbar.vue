@@ -3,6 +3,7 @@
     <div class="logo_section" @click="goHome">
       <img :src="ASSETS.MAIN_LOGO" alt="logo">
       <h3>{{ STRINGS.PRAXIS_NAME }}</h3>
+      <ThemeToggle />
     </div>
 
     <button class="hamburger" @click="toggleMenu" :class="{ open: isMenuOpen }">
@@ -28,8 +29,13 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import { ROUTES, STRINGS, ASSETS } from '@/constants';
+import ThemeToggle from './ThemeToggle.vue';
 
-@Options({})
+@Options({
+  components: {
+    ThemeToggle
+  }
+})
 export default class Navbar extends Vue {
   isMenuOpen: boolean = false;
 
@@ -60,7 +66,6 @@ export default class Navbar extends Vue {
     { path: ROUTES.SERVICES, name: STRINGS.SERVICES },
     { path: ROUTES.CONTACT, name: STRINGS.CONTACT },
     { path: ROUTES.APPOINTMENTS, name: STRINGS.APPOINTMENTS },
-    { path: ROUTES.IMPRESSUM, name: STRINGS.IMPRESSIUM },
   ];
 
   goHome() {
@@ -77,7 +82,7 @@ export default class Navbar extends Vue {
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
-  background:var(--color-background);
+  background:var(--color-navbar-bg);
   border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;

@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-// Import your pages
 import Home from './pages/Home.vue';
 import About from './pages/About.vue';
 import Services from './pages/Services.vue';
 import Contact from './pages/Contact.vue';
 import Appointments from './pages/Appointments.vue';
 import Impressium from './pages/Impressium.vue';
+import PrivacyPolicy from './pages/PrivacyPolicy.vue';
 import { ROUTES } from './constants';
 
 const routes = [
@@ -15,7 +15,8 @@ const routes = [
   { path: ROUTES.SERVICES, component: Services },
   { path: ROUTES.CONTACT, component: Contact },
   { path: ROUTES.APPOINTMENTS, component: Appointments },
-  { path: ROUTES.IMPRESSUM, component: Impressium }
+  { path: ROUTES.IMPRESSUM, component: Impressium },
+  { path: ROUTES.PRIVACY_POLICY, component: PrivacyPolicy },
 ];
 
 const router = createRouter({

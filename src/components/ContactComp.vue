@@ -25,7 +25,6 @@ export default class ContactComp extends Vue {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 1rem 0;
   text-align: left;
   width: 90%;
   max-width: 1000px;
@@ -40,7 +39,7 @@ export default class ContactComp extends Vue {
 
 .contact-container p {
   text-align: left;
-  line-height: 1.6;
+  line-height: 1.5;
   padding-left: 1rem;
 }
 

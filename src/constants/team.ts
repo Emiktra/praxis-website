@@ -26,8 +26,8 @@ export const TEAM = [
     link: ""
   },
   {
-    name: "Goebbles",
-    title: "Propaganda minister",
+    name: "Hasan",
+    title: "Hausmeister",
     image: ASSETS.TEAM_MEMBER_PORTRAIT,
     link: ""
   },
