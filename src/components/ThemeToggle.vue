@@ -1,7 +1,7 @@
 <template>
   <button type="button" class="theme-toggle" @click.stop="toggleTheme">
-    <span v-if="isDarkMode">☀️ {{ STRINGS.BRIGHT }}</span>
-    <span v-else>🌙 {{ STRINGS.DARK }}</span>
+    <span v-if="isDarkMode">☀️</span>
+    <span v-else>🌙</span>
   </button>
 </template>
 
@@ -49,6 +49,8 @@ export default class ThemeToggle extends Vue {
 <style scoped>
 .theme-toggle {
   cursor: pointer;
+  display: flex;
+  justify-content: center;
   background: var(--color-background-alt);
   color: var(--color-text-default);
   border: 1px solid var(--color-border);
@@ -56,6 +58,7 @@ export default class ThemeToggle extends Vue {
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   transition: background 0.3s ease, color 0.3s ease;
+  width: 50px;
 }
 
 .theme-toggle:hover {

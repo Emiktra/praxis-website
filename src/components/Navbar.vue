@@ -1,26 +1,30 @@
 <template>
   <header class="navbar">
-    <div class="logo_section" @click="goHome">
-      <img :src="ASSETS.MAIN_LOGO" alt="logo">
-      <h3>{{ STRINGS.PRAXIS_NAME }}</h3>
-      <ThemeToggle />
+    <div class="navbar-content">
+      <div class="logo_section" @click="goHome">
+        <img :src="ASSETS.MAIN_LOGO" alt="logo">
+        <h3>{{ STRINGS.PRAXIS_NAME }}</h3>
+        <ThemeToggle />
+      </div>
+  
+      <button class="hamburger" @click="toggleMenu" :class="{ open: isMenuOpen }">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+  
+      <nav ref="navLinks" :class="['nav-links', { open: isMenuOpen }]">
+        <div class="nav-links-gap"></div>
+        <router-link v-for="route in ROUTES_ARRAY"
+          :key="route.path"
+          :to="route.path"
+          @click="toggleMenu"
+        >
+          {{ route.name }}
+        </router-link>
+        <div class="nav-links-gap"></div>
+      </nav>
     </div>
-
-    <button class="hamburger" @click="toggleMenu" :class="{ open: isMenuOpen }">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav ref="navLinks" :class="['nav-links', { open: isMenuOpen }]">
-      <router-link v-for="route in ROUTES_ARRAY"
-        :key="route.path"
-        :to="route.path"
-        @click="toggleMenu"
-      >
-        {{ route.name }}
-      </router-link>
-    </nav>
   </header>
 </template>
 
@@ -77,16 +81,22 @@ export default class Navbar extends Vue {
 <style scoped>
 .navbar {
   display: flex;
+  justify-content: center;
   box-sizing: border-box;
   width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
   background:var(--color-navbar-bg);
-  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.navbar-content {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo_section {
@@ -111,6 +121,13 @@ export default class Navbar extends Vue {
   gap: 1.5rem;
   align-items: center;
   font-size: 18px;
+}
+
+.nav-links-gap {
+  display: none;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
 }
 
 .nav-links a {
@@ -172,16 +189,18 @@ export default class Navbar extends Vue {
 
 @media (max-width: 1200px) {
   .hamburger {
-    display: flex;
+    display: inline;
   }
 
   .nav-links {
+    display: flex;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
+    gap: 0;
     flex-direction: column;
-    background: var(--color-background);
+    background: var(--color-hamburger-menu-bg);
     border-top: 1px solid var(--color-border);
 
     max-height: 0;
@@ -190,15 +209,25 @@ export default class Navbar extends Vue {
   }
 
   .nav-links.open {
-    display: flex;
-    justify-content: space-between;
-    max-height: 500px;
     transition: max-height 0.2s ease-out;
   }
 
+  .nav-links-gap {
+    display: block;
+  }
+
   .nav-links a {
-    padding: 0.5rem;
+    padding: 0;
     text-align: center;
+    width: 100%;
+    padding: 1rem;
+    font-size: 20px;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
   }
 }
 </style>

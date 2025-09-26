@@ -5,6 +5,7 @@
     </div>
 
     <div class="main">
+        <br />
         <p class="lead">
           Der Schutz Ihrer persönlichen Daten ist uns wichtig. Im Folgenden informieren wir
           Sie darüber, welche personenbezogenen Daten wir zu welchem Zweck verarbeiten und
@@ -182,24 +183,18 @@
           <p>
             Bei Fragen zum Datenschutz wenden Sie sich bitte an:
           </p>
-          <p>
-            {{ STRINGS.PRAXIS_NAME }}<br />
-            {{ STRINGS.STREET }}<br />
-            {{ STRINGS.CITY }}<br />
-            E-Mail: <a :href="`mailto:${STRINGS.EMAIL}`">{{ STRINGS.EMAIL }}</a><br />
-            Telefon: <a :href="`tel:${STRINGS.PHONE_NUM}`">{{ STRINGS.PHONE_NUM }}</a>
-          </p>
-        </section>
-    
-        <section class="legal-note">
-          <h3>Rechtlicher Hinweis</h3>
-          <p>
-            Diese Datenschutzerklärung stellt eine Muster-/Vorlage dar und ersetzt keine individuelle
-            rechtliche Beratung. Bitte lassen Sie diese Erklärung von einem Rechtsanwalt oder
-            Datenschutzbeauftragten überprüfen und an Ihre tatsächlichen Verarbeitungen anpassen.
-          </p>
+          <ContactComp />   
         </section>
     </div>
+
+    <section class="legal-note">
+      <h3>Rechtlicher Hinweis</h3>
+      <p>
+        Diese Datenschutzerklärung stellt eine Muster-/Vorlage dar und ersetzt keine individuelle
+        rechtliche Beratung. Bitte lassen Sie diese Erklärung von einem Rechtsanwalt oder
+        Datenschutzbeauftragten überprüfen und an Ihre tatsächlichen Verarbeitungen anpassen.
+      </p>
+    </section>
   </div>
 </template>
 
@@ -277,10 +272,15 @@ export default class PrivacyPolicy extends Vue {
 }
 
 .legal-note {
-  margin-top: 1.5rem;
+  margin: 1.5rem 0;
   padding: 1rem;
+  max-width: 1000px;
+  width: 90%;
   border-radius: 8px;
-  background: var(--color-asset-bg);
-  color: var(--color-footer-text);
+  background: var(--color-background-alt);
+}
+
+.legal-note p{
+  margin-bottom: 1rem;
 }
 </style>

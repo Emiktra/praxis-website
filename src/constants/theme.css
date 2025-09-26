@@ -7,9 +7,10 @@
     --color-background: #f5f5f5;
     --color-background-alt: #e0e0e0;
     --color-navbar-bg: #d4dbce;
+    --color-hamburger-menu-bg: #afb9a6;
     --color-footer-bg: #222;
     --color-footer-text: #fff;
-    --color-border: #ddd;
+    --color-border: #c1c1c1;
     --color-asset-bg: #333;
 }
 
@@ -22,6 +23,7 @@
     --color-background: #121212;
     --color-background-alt: #1a1a1a;
     --color-navbar-bg: #2b2431;
+    --color-hamburger-menu-bg: #463b51;
     --color-footer-bg: #2b2431;
     --color-footer-text: #bbb;
     --color-border: #333;
